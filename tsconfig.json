@@ -1,11 +1,22 @@
 {
   "files": [],
   "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
+    {
+      "path": "./tsconfig.app.json"
+    },
+    {
+      "path": "./tsconfig.node.json"
+    }
   ],
   "compilerOptions": {
     "jsx": "react-jsx",
+    "types": [
+      "vitest/globals",
+      "@testing-library/jest-dom"
+    ]
   },
-  "include": ["src"]
+  "include": [
+    "src",
+    "./internal/jest-setup.ts"
+  ]
 }

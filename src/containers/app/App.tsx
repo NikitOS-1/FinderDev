@@ -1,7 +1,7 @@
 function App() {
   return (
     <>
-      <p>App</p>
+      <p>this is App RC</p>
     </>
   );
 }
