@@ -7,8 +7,9 @@ describe('App RC', () => {
     //When
     render(<App />);
 
-    const text = screen.getByText('this is App RC');
     //Then
-    expect(text).toBeInTheDocument();
+    expect(screen.getByText('Header')).toBeInTheDocument();
+    expect(screen.getByText('Body')).toBeInTheDocument();
+    expect(screen.getByText('Nikita Puzyrenko. 2024')).toBeInTheDocument();
   });
 });
