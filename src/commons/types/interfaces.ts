@@ -1,1 +1,3 @@
-export interface UserIterface {}
+export interface UserInterface {
+  id:string
+}
