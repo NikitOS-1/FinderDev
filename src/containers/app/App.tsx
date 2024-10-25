@@ -1,11 +1,12 @@
 import Header from '../header/Header.tsx';
 import Body from '../body/Body.tsx';
 import Footer from '../footer/Footer.tsx';
-import { Container } from './app.styled.ts';
+import { Container } from './styled.ts';
 import { useEffect } from 'react';
-import '../../commons/styles/rootStyle.scss';
+import { useAppSelector } from '../../redux/helpers.ts';
 
 function App() {
+  const theme = useAppSelector((store) => store.theme.mainTheme);
   const fetchGitHubData = async (url: string) => {
     try {
       const response = await fetch(url);
@@ -21,7 +22,7 @@ function App() {
   }, []);
 
   return (
-    <Container>
+    <Container theme={theme}>
       <Header />
       <Body />
       <Footer />
