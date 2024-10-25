@@ -1,21 +1,22 @@
-import { useState } from 'react';
 //@ts-ignore
 import LightModeIcon from '../../assets/light_mode.svg?react';
 //@ts-ignore
 import DarkModeIcon from '../../assets/dark_mode.svg?react';
-import { themeTextEnum } from './types.ts';
 import { ThemeSwitcherStyled } from './styled.ts';
+import { useAppDispatch, useAppSelector } from '../../redux/helpers.ts';
+import { ThemeType, toggleTheme } from '../../redux/slices/themeSlice.ts';
 
 
 export const ThemeSwitcher = () => {
-  const [isDark, setIsDark] = useState<boolean>(false);
-  const themeText = isDark ? themeTextEnum.dark : themeTextEnum.light;
-  const ThemeIcon = isDark ? <DarkModeIcon /> : <LightModeIcon />;
+  const dispatch = useAppDispatch();
+  const theme = useAppSelector((store) => store.theme.mainTheme);
+  const themeText = theme === ThemeType.light ? ThemeType.dark : ThemeType.light;
+  const ThemeIcon = theme === ThemeType.light ? <DarkModeIcon /> : <LightModeIcon />;
 
   return (
     <ThemeSwitcherStyled>
       <span>{themeText}</span>
-      <div onClick={() => setIsDark(!isDark)}>
+      <div onClick={() => dispatch(toggleTheme())}>
         {ThemeIcon}
       </div>
     </ThemeSwitcherStyled>

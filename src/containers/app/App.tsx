@@ -3,7 +3,6 @@ import Body from '../body/Body.tsx';
 import Footer from '../footer/Footer.tsx';
 import { Container } from './app.styled.ts';
 import { useEffect } from 'react';
-import '../../commons/styles/rootStyle.scss';
 
 function App() {
   const fetchGitHubData = async (url: string) => {
