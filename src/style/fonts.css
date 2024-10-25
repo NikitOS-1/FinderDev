@@ -1,0 +1,7 @@
+@font-face {
+    font-family: "Source_Code_Pro";
+    src: url('../assets/fonts/Source_Code_Pro/SourceCodePro-Italic-VariableFont_wght.ttf') format('truetype');
+    font-display: swap;
+    font-weight: 400;
+    font-style: normal;
+}

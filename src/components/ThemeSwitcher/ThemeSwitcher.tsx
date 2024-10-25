@@ -11,7 +11,7 @@ export const ThemeSwitcher = () => {
   const dispatch = useAppDispatch();
   const theme = useAppSelector((store) => store.theme.mainTheme);
   const themeText = theme === ThemeType.light ? ThemeType.dark : ThemeType.light;
-  const ThemeIcon = theme === ThemeType.light ? <DarkModeIcon /> : <LightModeIcon />;
+  const ThemeIcon = theme === ThemeType.light ? <DarkModeIcon fill={"white"}/> : <LightModeIcon fill={"black"}/>;
 
   return (
     <ThemeSwitcherStyled>

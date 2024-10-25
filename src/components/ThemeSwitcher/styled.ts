@@ -4,7 +4,7 @@ export const ThemeSwitcherStyled = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    min-width: 70px;
+    width: 100px;
     margin: 5px;
     padding: 8px;
 
