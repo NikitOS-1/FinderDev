@@ -1,10 +1,13 @@
-import { BodyWrapper } from './body.styled.ts';
+import { BodyStyled } from './styled.ts';
+import { useAppSelector } from '../../redux/helpers.ts';
 
 function Body() {
+  const theme = useAppSelector((store) => store.theme.mainTheme);
+
   return (
-    <BodyWrapper>
+    <BodyStyled theme={theme}>
       <p>Body</p>
-    </BodyWrapper>
+    </BodyStyled>
   );
 }
 
