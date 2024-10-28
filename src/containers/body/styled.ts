@@ -3,15 +3,15 @@ import { ThemeType } from '../../redux/slices/themeSlice.ts';
 import { darkThemeBox, lightThemeBox } from '../../style/commonStyled.ts';
 
 
-export const HeaderStyled = styled.div<{ theme: 'light' | 'dark'; }>`
+export const BodyStyled = styled.div<{ theme: 'light' | 'dark'; }>`
     ${(props) => (props.theme === ThemeType.dark ? darkThemeBox : lightThemeBox)}
 
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    height: 100%;
+    margin: 1rem 0px;
+`;
 
-    p {
-        font-weight: bold;
-        font-size: 1.5rem;
-    }
+export const ContentWrapper = styled.div`
+    margin: 0px 2rem;
+    width: 100%;
 `;

@@ -1,10 +1,13 @@
-import { FooterWrapper } from './footer.styled.ts';
+import { Styled } from './styled.ts';
+import { useAppSelector } from '../../redux/helpers.ts';
 
 function Footer() {
+  const theme = useAppSelector((store) => store.theme.mainTheme);
+
   return (
-    <FooterWrapper>
+    <Styled theme={theme}>
       <p>Nikita Puzyrenko. 2024</p>
-    </FooterWrapper>
+    </Styled>
   );
 }
 

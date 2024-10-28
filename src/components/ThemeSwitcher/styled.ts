@@ -4,13 +4,11 @@ export const ThemeSwitcherStyled = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100px;
-    margin: 5px;
-    padding: 8px;
+    min-width: 100px;
+    margin: 0.5rem;
+    padding: 0.5rem;
 
     span {
-        margin-right: 10px;
-
         &::first-letter {
             text-transform: uppercase;
         }

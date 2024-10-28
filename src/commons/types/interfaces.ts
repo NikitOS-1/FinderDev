@@ -1,36 +1,40 @@
-export interface UserInterface {
-  login: string,
-  id: number,
-  avatar: string
-  name: string
-  company: string | null,
-  blog: string
-  location: string
-  bio: string | null,
-  twitter: string | null,
-  repos: number
-  followers: number,
-  following: number,
-  created: string
+export interface ISearchParameters {
+  userName: string;
 }
 
-export interface FetchUserInterface {
-  login: string,
+export interface IUser {
   id: number,
-  avatar_url: string
-  name: string
-  company: string | null,
-  blog: string
-  location: string
-  bio: string | null,
-  public_repos: string
-  twitter_username: string | null,
-  followers: number,
-  following: number,
-  created_at: string
+  avatar: string;
+  name: string;
+  created: string;
+  login: string;
+  bio: string | null;
+  public: number | null;
+  followers: number | null;
+  following: number | null;
+  location: string | null;
+  twitter: string | null;
+  blog: string | null;
+  company: string | null;
 }
 
-export interface FetchErrorInterface {
+export interface IUserDataResponse {
+  id: number,
+  avatar_url: string;
+  name: string;
+  created_at: string;
+  login: string;
+  bio: string | null;
+  public_repos: number | null;
+  followers: number | null;
+  following: number | null;
+  location: string | null;
+  twitter_username: string | null;
+  blog: string | null;
+  company: string | null;
+}
+
+export interface IFetchError {
   message: string;
   documentation_url: string;
   status: string;
