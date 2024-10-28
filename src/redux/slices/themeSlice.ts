@@ -6,7 +6,7 @@ export enum ThemeType {
 }
 
 const initialState = {
-  mainTheme: ThemeType.light,
+  mainTheme: ThemeType.dark,
 };
 
 const themeSlice = createSlice({

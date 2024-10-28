@@ -23,3 +23,4 @@ export const darkThemeBox = css`
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     border-radius: 10px;
 `;
+

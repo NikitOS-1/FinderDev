@@ -23,8 +23,8 @@ function App() {
   }, []);
 
   return (
-    <Wrapper>
-      <Container theme={theme}>
+    <Wrapper theme={theme}>
+      <Container>
         <Header />
         <Body />
         <Footer />

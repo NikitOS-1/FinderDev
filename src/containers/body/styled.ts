@@ -4,9 +4,10 @@ import { darkThemeBox, lightThemeBox } from '../../style/commonStyled.ts';
 
 
 export const BodyStyled = styled.div<{ theme: 'light' | 'dark'; }>`
+    ${(props) => (props.theme === ThemeType.dark ? darkThemeBox : lightThemeBox)}
+
     display: flex;
-    padding: 20px;
-
-    ${(props) => (props.theme === ThemeType.dark ? lightThemeBox : darkThemeBox)}
-
+    padding: 1rem;
+    height: 100%;
+    margin: 1rem 0px;
 `;
