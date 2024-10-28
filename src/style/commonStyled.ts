@@ -15,6 +15,7 @@ export const lightThemeBox = css`
     border: 1px solid rgba(200, 200, 200, 0.8);
     box-shadow: 0 4px 10px rgba(100, 100, 100, 0.3);
     border-radius: 10px;
+    padding: 1rem;
 `;
 
 export const darkThemeBox = css`
@@ -22,5 +23,6 @@ export const darkThemeBox = css`
     border: 1px solid rgba(46, 46, 46, 0.8);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     border-radius: 10px;
+    padding: 1rem;
 `;
 

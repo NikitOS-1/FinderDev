@@ -9,7 +9,6 @@ export const HeaderStyled = styled.div<{ theme: 'light' | 'dark'; }>`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem;
 
     p {
         font-weight: bold;
