@@ -19,7 +19,7 @@ function App() {
   };
 
   useEffect(() => {
-    fetchGitHubData('https://api.github.com/users/NikitOS-1');
+    fetchGitHubData('https://api.github.com/users/Michey85');
   }, []);
 
   return (

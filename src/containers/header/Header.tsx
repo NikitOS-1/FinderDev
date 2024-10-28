@@ -7,7 +7,7 @@ function Header() {
 
   return (
     <HeaderStyled theme={theme}>
-      <p>Finder Dev</p>
+      <p>FinderDev</p>
       <ThemeSwitcher />
     </HeaderStyled>
   );

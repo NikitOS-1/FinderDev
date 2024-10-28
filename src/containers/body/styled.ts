@@ -10,3 +10,8 @@ export const BodyStyled = styled.div<{ theme: 'light' | 'dark'; }>`
     height: 100%;
     margin: 1rem 0px;
 `;
+
+export const ContentWrapper = styled.div`
+    margin: 0px 2rem;
+    width: 100%;
+`;

@@ -1,4 +1,4 @@
-import { BodyStyled } from './styled.ts';
+import { BodyStyled, ContentWrapper } from './styled.ts';
 import { useAppSelector } from '../../redux/helpers.ts';
 
 function Body() {
@@ -6,7 +6,10 @@ function Body() {
 
   return (
     <BodyStyled theme={theme}>
-      <p>Body</p>
+      <ContentWrapper>
+        <div>search</div>
+        <div>content</div>
+      </ContentWrapper>
     </BodyStyled>
   );
 }
