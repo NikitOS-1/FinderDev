@@ -2,7 +2,7 @@ export interface ISearchParameters {
   userName: string;
 }
 
-export interface IUser {
+export interface IUserProfile {
   id: number,
   avatar: string;
   name: string;
