@@ -9,14 +9,25 @@
     }
   ],
   "compilerOptions": {
+    "module": "ESNext",
+    "esModuleInterop": true,
     "jsx": "react-jsx",
-    "types": [
-      "vitest/globals",
-      "@testing-library/jest-dom"
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node",
+    "baseUrl": "./src",
+    "paths": {
+      "*": [
+        "types/*"
+      ]
+    },
+    "typeRoots": [
+      "./node_modules/@types",
+      "./types"
     ]
   },
   "include": [
     "src",
-    "./internal/jest-setup.ts"
+    "types"
   ]
 }
