@@ -35,9 +35,6 @@ function Body() {
           <input value={searchUserName} onChange={
             (e) => setSearchUserName(e.target.value)
           } />
-          <div>
-            search
-          </div>
         </div>
         {isLoading ? <LoadingSpinner /> : <div>content</div>}
       </ContentWrapper>
