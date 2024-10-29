@@ -8,7 +8,7 @@ function Body() {
   const theme = useAppSelector((store) => store.theme.mainTheme);
 
   useEffect(() => {
-    dispatch(getUserProfile('NikitOS-1'));
+    // dispatch(getUserProfile('NikitOS-1'));
   }, []);
 
   return (
