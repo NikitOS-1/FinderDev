@@ -1,7 +1,7 @@
-export function debounce<T extends (...args: any[]) => void>(func: T, delay: number): (...args: Parameters<T>) => void {
+export function debounce(func: any, delay: number) {
   let timeoutId: NodeJS.Timeout | null = null;
 
-  return function(...args: Parameters<T>) {
+  return function(...args: any) {
     if (timeoutId) {
       clearTimeout(timeoutId);
     }
