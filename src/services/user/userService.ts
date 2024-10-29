@@ -5,7 +5,7 @@ import { BACKEND_API_PATH } from '../../commons/constants/pathConstant.ts';
 
 
 async function getUserProfile(userName: string): Promise<IUserDataResponse> {
-  return apiService.get(`${getApiBaseUrl()}/${BACKEND_API_PATH.USER}/${userName}`);
+  return apiService.get(`${getApiBaseUrl()}/${BACKEND_API_PATH.USERS}/${userName}`);
 }
 
 const userService = {

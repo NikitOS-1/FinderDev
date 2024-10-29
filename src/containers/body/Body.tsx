@@ -1,8 +1,15 @@
 import { BodyStyled, ContentWrapper } from './styled.ts';
-import { useAppSelector } from '../../redux/helpers.ts';
+import { useAppDispatch, useAppSelector } from '../../redux/helpers.ts';
+import { useEffect } from 'react';
+import { getUserProfile } from '../../redux/slices/userSlice.ts';
 
 function Body() {
+  const dispatch = useAppDispatch();
   const theme = useAppSelector((store) => store.theme.mainTheme);
+
+  useEffect(() => {
+    dispatch(getUserProfile('NikitOS-1'));
+  }, []);
 
   return (
     <BodyStyled theme={theme}>
