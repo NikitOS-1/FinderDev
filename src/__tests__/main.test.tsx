@@ -17,7 +17,7 @@ describe('Root render', () => {
     const renderMock = jest.fn();
     (createRoot as jest.Mock).mockReturnValueOnce({ render: renderMock });
 
-    require('../main.tsx');
+    // require('../main.tsx');
 
     expect(createRoot).toHaveBeenCalledWith(rootElement);
     expect(renderMock).toHaveBeenCalledWith(

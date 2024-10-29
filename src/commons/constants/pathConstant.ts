@@ -1,3 +1,5 @@
 export const BACKEND_API_PATH = {
-  USER: 'user',
+  USERS: 'users',
 };
+
+export const REACT_APP_API_BASE_URL = 'https://api.github.com';
