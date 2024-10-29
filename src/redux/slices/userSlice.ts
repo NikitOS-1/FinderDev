@@ -1,5 +1,7 @@
 import { IUserProfile } from '../../commons/types/interfaces.ts';
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { clearLoading, setLoading } from './loadingSlice.ts';
+import userService from '../../services/user/userService.ts';
 
 
 export const initialState: IUserProfile = {
@@ -18,7 +20,21 @@ export const initialState: IUserProfile = {
   company: '',
 };
 
-
+export const getUserProfile = createAsyncThunk<UserProfile, string, { rejectValue: string }>(
+  'user/profile',
+  async (userId, thunkAPI) => {
+    try {
+      thunkAPI.dispatch(setLoading());
+      return await userService.getUserProfile(userId);
+    } catch (error: any) {
+      const { message } = error;
+      thunkAPI.dispatch(setMessage(convertToErrorMessage(error)));
+      return thunkAPI.rejectWithValue(message);
+    } finally {
+      thunkAPI.dispatch(clearLoading());
+    }
+  },
+);
 
 
 const userSlice = createSlice({
