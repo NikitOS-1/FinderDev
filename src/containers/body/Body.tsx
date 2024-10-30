@@ -9,9 +9,10 @@ import { clearUserData, getUserProfile } from '../../redux/slices/userSlice.ts';
 import { InputSearch } from '../../components/InputSearch';
 import { ErrorsHandler } from '../../components/ErrorsHandler';
 import { UserContent } from '../UserContent';
-
+import { clearError } from '../../redux/slices/errorSlice.ts';
 
 const DELAY_SEARCH_INTERVAL = 1000;
+const MIN_SEARCH_LENGTH = 1;
 
 function Body() {
   const dispatch = useAppDispatch();
@@ -24,19 +25,25 @@ function Body() {
   const [searchUserName, setSearchUserName] = useState<string>('');
   const [hasSearched, setHasSearched] = useState<boolean>(false);
 
+
   const debounceSearch = useCallback(
     debounce((searchTerm: string) => {
-      if (!userProfile.id) {
+      dispatch(clearError());
+
+      if (searchTerm.length > MIN_SEARCH_LENGTH) {
         dispatch(getUserProfile(searchTerm));
+        setHasSearched(true);
       }
-      setHasSearched(true);
     }, DELAY_SEARCH_INTERVAL),
     [dispatch],
   );
 
   useEffect(() => {
-    dispatch(clearUserData());
-    if (searchUserName) {
+    if (userProfile.id) {
+      dispatch(clearUserData());
+    }
+
+    if (searchUserName.length >= MIN_SEARCH_LENGTH) {
       debounceSearch(searchUserName);
     }
   }, [searchUserName, debounceSearch]);
@@ -53,12 +60,12 @@ function Body() {
     if (hasSearched && userProfile.id) {
       return <UserContent />;
     }
+
     return (
-      <div className={'github_icon'}>
+      <div className="github_icon">
         <GitHubIcon />
       </div>
     );
-
   };
 
   return (
