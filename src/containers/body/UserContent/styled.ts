@@ -48,7 +48,7 @@ export const ContentStyled = styled.div<{ theme: 'light' | 'dark'; }>`
             flex-direction: column;
             align-items: center;
         }
-        
+
         @media (max-width: 1150px) {
             margin: 1rem;
             flex-direction: column;
@@ -65,6 +65,30 @@ export const ContentStyled = styled.div<{ theme: 'light' | 'dark'; }>`
             :first-child {
                 font-family: "Press_Start_2P", sans-serif;
                 font-size: 1.6rem;
+
+                @media (max-width: 880px) {
+                    font-size: 1.4rem;
+                    max-width: 20rem;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+
+                @media (max-width: 750px) {
+                    font-size: 1.4rem;
+                }
+
+                @media (max-width: 550px) {
+                    font-size: 1.3rem;
+                }
+                
+                @media (max-width: 460px) {
+                    font-size: 1.2rem;
+                    max-width: 15rem;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
             }
 
             :last-child {
@@ -171,6 +195,10 @@ export const ContentStyled = styled.div<{ theme: 'light' | 'dark'; }>`
                         white-space: nowrap;
                         overflow: hidden;
                         text-overflow: ellipsis;
+
+                        @media (max-width: 460px) {
+                            max-width: 14rem;
+                        }
                     }
                 }
             }
@@ -180,9 +208,7 @@ export const ContentStyled = styled.div<{ theme: 'light' | 'dark'; }>`
                 align-items: flex-start;
                 font-size: 0.8rem;
             }
-            @media (max-width: 740px) {
-                align-items: center;
-            }
+
             @media (max-width: 460px) {
                 margin-top: 2rem;
             }
