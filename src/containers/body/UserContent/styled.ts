@@ -48,6 +48,12 @@ export const ContentStyled = styled.div<{ theme: 'light' | 'dark'; }>`
             flex-direction: column;
             align-items: center;
         }
+        
+        @media (max-width: 1150px) {
+            margin: 1rem;
+            flex-direction: column;
+            align-items: center;
+        }
 
         .content_user_info {
             font-family: "Source_Code_Pro", sans-serif;

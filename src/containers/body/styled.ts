@@ -14,6 +14,9 @@ export const BodyStyled = styled.div<{ theme: 'light' | 'dark'; }>`
 export const ContentWrapper = styled.div`
     margin: 0px 7rem;
     width: 100%;
+    @media (max-width: 1250px) {
+        margin: 0px 2rem;
+    }
     @media (max-width: 740px) {
         margin: 0px 2rem;
     }
