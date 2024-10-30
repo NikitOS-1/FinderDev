@@ -6,6 +6,7 @@ import { debounce } from '../../utilits/debounce.ts';
 import { getUserProfile } from '../../redux/slices/userSlice.ts';
 import { InputSearch } from '../../components/InputSearch';
 import { ErrorsHandler } from '../../components/ErrorsHandler';
+import { UserContent } from '../UserContent';
 
 const DELAY_SEARCH_INTERVAL = 1000;
 
@@ -40,7 +41,7 @@ function Body() {
         ) : isError ? (
           <ErrorsHandler message="User not found" />
         ) : (
-          <div>content</div>
+          <UserContent />
         )}
       </ContentWrapper>
     </BodyStyled>
