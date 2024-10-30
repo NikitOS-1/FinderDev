@@ -1,3 +1,5 @@
+//@ts-ignore
+import GitHubIcon from '../../assets/github_icon.svg?react';
 import { BodyStyled, ContentWrapper } from './styled.ts';
 import { useAppDispatch, useAppSelector } from '../../redux/helpers.ts';
 import { useCallback, useEffect, useState } from 'react';
@@ -7,6 +9,7 @@ import { clearUserData, getUserProfile } from '../../redux/slices/userSlice.ts';
 import { InputSearch } from '../../components/InputSearch';
 import { ErrorsHandler } from '../../components/ErrorsHandler';
 import { UserContent } from '../UserContent';
+
 
 const DELAY_SEARCH_INTERVAL = 1000;
 
@@ -23,7 +26,9 @@ function Body() {
 
   const debounceSearch = useCallback(
     debounce((searchTerm: string) => {
-      dispatch(getUserProfile(searchTerm));
+      if (!userProfile.id) {
+        dispatch(getUserProfile(searchTerm));
+      }
       setHasSearched(true);
     }, DELAY_SEARCH_INTERVAL),
     [dispatch],
@@ -31,7 +36,6 @@ function Body() {
 
   useEffect(() => {
     dispatch(clearUserData());
-
     if (searchUserName) {
       debounceSearch(searchUserName);
     }
@@ -49,8 +53,12 @@ function Body() {
     if (hasSearched && userProfile.id) {
       return <UserContent />;
     }
+    return (
+      <div className={'github_icon'}>
+        <GitHubIcon />
+      </div>
+    );
 
-    return <div>Start searching for GitHub users!</div>;
   };
 
   return (

@@ -1,6 +1,14 @@
 import { ContentStyled } from './styled.ts';
 import { useAppSelector } from '../../redux/helpers.ts';
 import UserAvatar from '../../components/UserAvatar/UserAvatar.tsx';
+//@ts-ignore
+import LocationIcon from '../../assets/location_icon.svg?react';
+//@ts-ignore
+import ApartmentIcon from '../../assets/apartment_icon.svg?react';
+//@ts-ignore
+import ShareIcon from '../../assets/share_icon.svg?react';
+//@ts-ignore
+import LanguageIcon from '../../assets/language_icon.svg?react';
 
 export const UserContent = () => {
   const {
@@ -17,24 +25,82 @@ export const UserContent = () => {
     blog,
     company,
   } = useAppSelector((store) => store.user);
+  const theme = useAppSelector((store) => store.theme.mainTheme);
+
+  const date = new Date(created);
+  const formattedDate = new Intl.DateTimeFormat('en-GB', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  }).format(date);
+
+  const userInfo = [
+    {
+      icon: <LocationIcon />,
+      label: 'Location',
+      value: location || 'No info',
+      className: location ? 'location' : 'no-info',
+    },
+    {
+      icon: <ShareIcon />,
+      label: 'Twitter',
+      value: twitter || 'No info',
+      className: twitter ? 'twitter' : 'no-info',
+    },
+    {
+      icon: <LanguageIcon />,
+      label: 'Blog',
+      value: blog || 'No info',
+      className: blog ? 'blog' : 'no-info',
+    },
+    {
+      icon: <ApartmentIcon />,
+      label: 'Company',
+      value: company || 'No info',
+      className: company ? 'company' : 'no-info',
+    },
+  ];
 
   return (
-    <ContentStyled>
-      <div>
-        <UserAvatar srcImage={avatar} name={name} />
+    <ContentStyled theme={theme}>
+      <div className="left_content">
+        <UserAvatar srcImage={avatar} name={name} className={'avatar'}/>
+        <div className="content_user_login">@{login}</div>
       </div>
-      <div>
-        <div><strong>Name:</strong> {name}</div>
-        <div><strong>Login:</strong> {login}</div>
-        <div><strong>Created:</strong> {created}</div>
-        <div><strong>Bio:</strong> {bio}</div>
-        <div><strong>Public Repos:</strong> {publicRepos}</div>
-        <div><strong>Followers:</strong> {followers}</div>
-        <div><strong>Following:</strong> {following}</div>
-        <div><strong>Location:</strong> {location}</div>
-        <div><strong>Twitter:</strong> {twitter}</div>
-        <div><strong>Blog:</strong> <a href={blog} target="_blank" rel="noopener noreferrer">{blog}</a></div>
-        <div><strong>Company:</strong> {company}</div>
+      <div className="right_content">
+        <div className="content_user_info">
+          <p>{name}</p>
+          <span>Joined {formattedDate}</span>
+        </div>
+        <div className="content_user_bio">{bio}</div>
+        <div className="content_user_activity">
+          <div>Repos <p>{publicRepos}</p></div>
+          <div>Followers <p>{followers}</p></div>
+          <div>Following <p>{following}</p></div>
+        </div>
+        <div className="content_user_about">
+          <div className="content_block_left">
+            <div>
+              <span><LocationIcon /></span>
+              <p>{location || 'No info'}</p>
+            </div>
+            <div>
+              <span><LanguageIcon /></span>
+              <p>{blog || 'No info'}</p>
+            </div>
+          </div>
+
+          <div className="content_block_right">
+            <div>
+              <span><ShareIcon /></span>
+              <p>{twitter || 'No info'}</p>
+            </div>
+            <div>
+              <span><ApartmentIcon /></span>
+              <p>{company || 'No info'}</p>
+            </div>
+          </div>
+        </div>
       </div>
     </ContentStyled>
   );

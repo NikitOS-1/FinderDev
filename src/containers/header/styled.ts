@@ -11,7 +11,16 @@ export const HeaderStyled = styled.div<{ theme: 'light' | 'dark'; }>`
     justify-content: space-between;
 
     p {
+        margin-left: 3rem;
+        font-family: "Press_Start_2P", sans-serif;
         font-weight: bold;
-        font-size: 1.5rem;
+        font-size: 1.3rem;
+    }
+
+    @media (max-width: 460px) {
+        p {
+            margin-left: 0rem;
+            font-size: 0.8rem;
+        }
     }
 `;

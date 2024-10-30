@@ -8,7 +8,18 @@ export const Wrapper = styled.div<{ theme: 'light' | 'dark' }>`
         ${props.theme === ThemeType.dark ? darkThemeBackground : lightThemeBackground}
         transition: background-color 0.3s ease, color 0.3s ease;
         width: 100vw;
-        height: 100vh;
+        min-height: 100vh;
+        height: 100%;
+
+        @media (max-width: 740px) {
+            min-height: 100vh;
+            height: 100%;
+        }
+        
+        @media (max-width: 460px) {
+            min-height: 100vh;
+            height: 100%;
+        }
     `}
 `;
 
@@ -16,6 +27,16 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     width: 90%;
-    height: 100%;
+    height:max-content;
     margin: 0 auto;
+
+    @media (max-width: 740px) {
+        width: 95%;
+        height:max-content;
+    }
+    
+    @media (max-width: 460px) {
+        width: 95%;
+        height:max-content;
+    }
 `;
