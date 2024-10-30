@@ -3,7 +3,7 @@ import { useAppDispatch, useAppSelector } from '../../redux/helpers.ts';
 import { useCallback, useEffect, useState } from 'react';
 import LoadingSpinner from '../../components/Spinner/LoadingSpinner.tsx';
 import { debounce } from '../../utilits/debounce.ts';
-import { getUserProfile } from '../../redux/slices/userSlice.ts';
+import { clearUserData, getUserProfile } from '../../redux/slices/userSlice.ts';
 import { InputSearch } from '../../components/InputSearch';
 import { ErrorsHandler } from '../../components/ErrorsHandler';
 import { UserContent } from '../UserContent';
@@ -30,6 +30,8 @@ function Body() {
   );
 
   useEffect(() => {
+    dispatch(clearUserData());
+
     if (searchUserName) {
       debounceSearch(searchUserName);
     }
