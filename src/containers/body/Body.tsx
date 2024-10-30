@@ -14,16 +14,19 @@ function Body() {
   const dispatch = useAppDispatch();
 
   const theme = useAppSelector((store) => store.theme.mainTheme);
-  const isLoading = useAppSelector(store => store.loading.isLoading);
-  const isError = useAppSelector(store => store.error.error);
+  const isLoading = useAppSelector((store) => store.loading.isLoading);
+  const isError = useAppSelector((store) => store.error.error);
+  const userProfile = useAppSelector((store) => store.user);
 
   const [searchUserName, setSearchUserName] = useState<string>('');
+  const [hasSearched, setHasSearched] = useState<boolean>(false);
 
   const debounceSearch = useCallback(
     debounce((searchTerm: string) => {
       dispatch(getUserProfile(searchTerm));
+      setHasSearched(true);
     }, DELAY_SEARCH_INTERVAL),
-    [],
+    [dispatch],
   );
 
   useEffect(() => {
@@ -32,17 +35,27 @@ function Body() {
     }
   }, [searchUserName, debounceSearch]);
 
+  const renderContent = () => {
+    if (isLoading) {
+      return <LoadingSpinner />;
+    }
+
+    if (isError) {
+      return <ErrorsHandler message="User not found" />;
+    }
+
+    if (hasSearched && userProfile.id) {
+      return <UserContent />;
+    }
+
+    return <div>Start searching for GitHub users!</div>;
+  };
+
   return (
     <BodyStyled theme={theme}>
       <ContentWrapper>
         <InputSearch value={searchUserName} onChange={setSearchUserName} />
-        {isLoading ? (
-          <LoadingSpinner />
-        ) : isError ? (
-          <ErrorsHandler message="User not found" />
-        ) : (
-          <UserContent />
-        )}
+        {renderContent()}
       </ContentWrapper>
     </BodyStyled>
   );
