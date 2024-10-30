@@ -1,14 +1,14 @@
 import { ContentStyled } from './styled.ts';
-import { useAppSelector } from '../../redux/helpers.ts';
-import UserAvatar from '../../components/UserAvatar/UserAvatar.tsx';
+import { useAppSelector } from '../../../redux/helpers.ts';
+import UserAvatar from '../../../components/UserAvatar/UserAvatar.tsx';
 //@ts-ignore
-import LocationIcon from '../../assets/location_icon.svg?react';
+import LocationIcon from '../../../assets/location_icon.svg?react';
 //@ts-ignore
-import ApartmentIcon from '../../assets/apartment_icon.svg?react';
+import ApartmentIcon from '../../../assets/apartment_icon.svg?react';
 //@ts-ignore
-import ShareIcon from '../../assets/share_icon.svg?react';
+import ShareIcon from '../../../assets/share_icon.svg?react';
 //@ts-ignore
-import LanguageIcon from '../../assets/language_icon.svg?react';
+import LanguageIcon from '../../../assets/language_icon.svg?react';
 
 export const UserContent = () => {
   const {
