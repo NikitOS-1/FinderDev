@@ -10,6 +10,8 @@ import ShareIcon from '../../../assets/share_icon.svg?react';
 //@ts-ignore
 import LanguageIcon from '../../../assets/language_icon.svg?react';
 
+const GITHUB_USER_PAGE_URL = 'https://github.com';
+
 export const UserContent = () => {
   const {
     avatar,
@@ -38,7 +40,14 @@ export const UserContent = () => {
     <ContentStyled theme={theme}>
       <div className="left_content">
         <UserAvatar srcImage={avatar} name={name} className={'avatar'} />
-        <div className="content_user_login">@{login}</div>
+        <a
+          href={`${GITHUB_USER_PAGE_URL}/${login}`}
+          className="content_user_login"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          @{login}
+        </a>
       </div>
       <div className="right_content">
         <div className="content_user_info">

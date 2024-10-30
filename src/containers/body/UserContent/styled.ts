@@ -25,6 +25,12 @@ export const ContentStyled = styled.div<{ theme: 'light' | 'dark'; }>`
             justify-content: center;
             color: #0074D9;
             font-weight: bolder;
+            transition: transform 0.2s ease;
+
+            &:hover {
+                opacity: 0.8;
+                transform: scale(1.1);
+            }
         }
 
         @media (max-width: 460px) {
