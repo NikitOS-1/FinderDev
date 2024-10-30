@@ -7,7 +7,7 @@ import { getUserProfile } from '../../redux/slices/userSlice.ts';
 import { InputSearch } from '../../components/InputSearch';
 import { ErrorsHandler } from '../../components/ErrorsHandler';
 
-const DELAY_SEARCH_INTERVAL = 2000;
+const DELAY_SEARCH_INTERVAL = 1000;
 
 function Body() {
   const dispatch = useAppDispatch();
@@ -35,8 +35,13 @@ function Body() {
     <BodyStyled theme={theme}>
       <ContentWrapper>
         <InputSearch value={searchUserName} onChange={setSearchUserName} />
-        {isLoading ? <LoadingSpinner /> : <div>content</div>}
-        {isError ? <ErrorsHandler message={'User not found'} /> : null}
+        {isLoading ? (
+          <LoadingSpinner />
+        ) : isError ? (
+          <ErrorsHandler message="User not found" />
+        ) : (
+          <div>content</div>
+        )}
       </ContentWrapper>
     </BodyStyled>
   );
