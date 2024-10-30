@@ -46,7 +46,7 @@ function Body() {
     if (searchUserName.length >= MIN_SEARCH_LENGTH) {
       debounceSearch(searchUserName);
     }
-  }, [searchUserName, debounceSearch]);
+  }, [dispatch, searchUserName, debounceSearch]);
 
   const renderContent = () => {
     if (isLoading) {
