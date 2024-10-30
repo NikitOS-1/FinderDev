@@ -10,16 +10,6 @@ export const Wrapper = styled.div<{ theme: 'light' | 'dark' }>`
         width: 100vw;
         min-height: 100vh;
         height: 100%;
-
-        @media (max-width: 740px) {
-            min-height: 100vh;
-            height: 100%;
-        }
-        
-        @media (max-width: 460px) {
-            min-height: 100vh;
-            height: 100%;
-        }
     `}
 `;
 
@@ -27,16 +17,17 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     width: 90%;
-    height:max-content;
+    height: max-content;
     margin: 0 auto;
+    max-width: 1800px;
+    
+    @media (max-width: 1024px) {
+        width: 90%;
+        height: max-content;
+    }
 
     @media (max-width: 740px) {
         width: 95%;
-        height:max-content;
-    }
-    
-    @media (max-width: 460px) {
-        width: 95%;
-        height:max-content;
+        height: max-content;
     }
 `;

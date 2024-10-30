@@ -34,37 +34,10 @@ export const UserContent = () => {
     day: 'numeric',
   }).format(date);
 
-  const userInfo = [
-    {
-      icon: <LocationIcon />,
-      label: 'Location',
-      value: location || 'No info',
-      className: location ? 'location' : 'no-info',
-    },
-    {
-      icon: <ShareIcon />,
-      label: 'Twitter',
-      value: twitter || 'No info',
-      className: twitter ? 'twitter' : 'no-info',
-    },
-    {
-      icon: <LanguageIcon />,
-      label: 'Blog',
-      value: blog || 'No info',
-      className: blog ? 'blog' : 'no-info',
-    },
-    {
-      icon: <ApartmentIcon />,
-      label: 'Company',
-      value: company || 'No info',
-      className: company ? 'company' : 'no-info',
-    },
-  ];
-
   return (
     <ContentStyled theme={theme}>
       <div className="left_content">
-        <UserAvatar srcImage={avatar} name={name} className={'avatar'}/>
+        <UserAvatar srcImage={avatar} name={name} className={'avatar'} />
         <div className="content_user_login">@{login}</div>
       </div>
       <div className="right_content">

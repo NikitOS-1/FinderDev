@@ -8,4 +8,8 @@ export const ErrorHandlerStyled = styled.div`
     font-size: 2rem;
     height: 60%;
     padding: 10rem 0;
+    
+    @media (max-width: 740px) {
+        font-size: 1.5rem;
+    }
 `;

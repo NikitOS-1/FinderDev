@@ -26,7 +26,7 @@ export const ContentWrapper = styled.div`
         padding-bottom: 5rem;
         margin: 0 auto;
         width: 20rem;
-        
+
         @media (max-width: 740px) {
             padding-top: 5rem;
             padding-bottom: 2rem;

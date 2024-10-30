@@ -3,7 +3,6 @@ import { ThemeType } from '../../redux/slices/themeSlice.ts';
 
 export const ContentStyled = styled.div<{ theme: 'light' | 'dark'; }>`
     display: flex;
-    //height: 100%;
     width: 100%;
     margin-top: 3rem;
 
@@ -108,14 +107,19 @@ export const ContentStyled = styled.div<{ theme: 'light' | 'dark'; }>`
                 }
             }
 
-            @media (max-width: 1100px) {
+            @media (max-width: 1024px) {
+                font-size: 0.8rem;
+                padding: 1rem;
+            }
+
+            @media (max-width: 940px) {
                 flex-direction: column;
                 align-items: center;
                 font-size: 0.8rem;
                 width: max-content;
 
                 div {
-                    margin-top: 2rem;
+                    margin: 2rem;
                     display: flex;
                     flex-direction: column;
 
