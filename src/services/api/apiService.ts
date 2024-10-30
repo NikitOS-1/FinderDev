@@ -1,4 +1,4 @@
-import { HTTP_REQUEST_TYPE } from '../../commons/enums/enum.ts';
+import { HTTP_REQUEST_TYPE } from '../../commons/enums/enum';
 import axios, { AxiosRequestConfig } from 'axios';
 
 

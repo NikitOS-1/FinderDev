@@ -1,6 +1,22 @@
 @font-face {
     font-family: "Source_Code_Pro";
-    src: url('../assets/fonts/Source_Code_Pro/SourceCodePro-Italic-VariableFont_wght.ttf') format('truetype');
+    src: url('../assets/fonts/Source_Code_Pro/SourceCodePro-VariableFont_wght.ttf') format('truetype');
+    font-display: swap;
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Press_Start_2P";
+    src: url('../assets/fonts/Press_Start_2P/PressStart2P-Regular.ttf') format('truetype');
+    font-display: swap;
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Fira_Code";
+    src: url('../assets/fonts/Fira_Code/FiraCode-VariableFont_wght.ttf') format('truetype');
     font-display: swap;
     font-weight: 400;
     font-style: normal;

@@ -9,6 +9,10 @@
     }
   ],
   "compilerOptions": {
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "declaration": true,
+    "declarationMap": true,
     "module": "ESNext",
     "esModuleInterop": true,
     "jsx": "react-jsx",
@@ -29,5 +33,10 @@
   "include": [
     "src",
     "types"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/*.test.ts",
+    "**/*.test.tsx"
   ]
 }

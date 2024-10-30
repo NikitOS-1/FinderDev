@@ -1,5 +1,5 @@
 import Avatar from 'react-avatar';
-import { AVATAR_SIZES } from '../../commons/constants/constants.ts';
+import { AVATAR_SIZES } from '../../commons/constants/constants';
 
 interface UserAvatarProps {
   name?: string;

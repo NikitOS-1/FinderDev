@@ -1,2 +1,2 @@
-export * from './InputSearch.tsx';
+export * from './InputSearch';
 export * from './styled';

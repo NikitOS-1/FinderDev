@@ -1,4 +1,4 @@
-import { ErrorHandlerStyled } from './styled.ts';
+import { ErrorHandlerStyled } from './styled';
 
 
 interface ErrorsHandlerPropsI {

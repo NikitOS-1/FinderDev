@@ -9,6 +9,7 @@ export const SearchContainer = styled.div`
     border: 2px solid #ddd;
     border-radius: 8px;
     padding: 0 1rem;
+    margin-top: 2rem;
 `;
 
 export const InputStyled = styled.input`

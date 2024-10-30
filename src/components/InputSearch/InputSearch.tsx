@@ -1,6 +1,6 @@
 // @ts-ignore
 import SearchIcon from '../../assets/search_icon.svg?react';
-import { InputStyled, SearchContainer } from './styled.ts';
+import { InputStyled, SearchContainer } from './styled';
 
 interface InputSearchPropsI {
   value: string;

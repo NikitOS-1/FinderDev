@@ -1,14 +1,18 @@
-import { BodyStyled, ContentWrapper } from './styled.ts';
-import { useAppDispatch, useAppSelector } from '../../redux/helpers.ts';
+//@ts-ignore
+import GitHubIcon from '../../assets/github_icon.svg?react';
+import { BodyStyled, ContentWrapper } from './styled';
+import { useAppDispatch, useAppSelector } from '../../redux/helpers';
 import { useCallback, useEffect, useState } from 'react';
-import LoadingSpinner from '../../components/Spinner/LoadingSpinner.tsx';
-import { debounce } from '../../utilits/debounce.ts';
-import { clearUserData, getUserProfile } from '../../redux/slices/userSlice.ts';
+import LoadingSpinner from '../../components/Spinner/LoadingSpinner';
+import { debounce } from '../../utilits/debounce';
+import { clearUserData, getUserProfile } from '../../redux/slices/userSlice';
 import { InputSearch } from '../../components/InputSearch';
 import { ErrorsHandler } from '../../components/ErrorsHandler';
-import { UserContent } from '../UserContent';
+import { UserContent } from './UserContent';
+import { clearError } from '../../redux/slices/errorSlice';
 
 const DELAY_SEARCH_INTERVAL = 1000;
+const MIN_SEARCH_LENGTH = 1;
 
 function Body() {
   const dispatch = useAppDispatch();
@@ -21,21 +25,28 @@ function Body() {
   const [searchUserName, setSearchUserName] = useState<string>('');
   const [hasSearched, setHasSearched] = useState<boolean>(false);
 
+
   const debounceSearch = useCallback(
     debounce((searchTerm: string) => {
-      dispatch(getUserProfile(searchTerm));
-      setHasSearched(true);
+      dispatch(clearError());
+
+      if (searchTerm.length > MIN_SEARCH_LENGTH) {
+        dispatch(getUserProfile(searchTerm));
+        setHasSearched(true);
+      }
     }, DELAY_SEARCH_INTERVAL),
     [dispatch],
   );
 
   useEffect(() => {
-    dispatch(clearUserData());
+    if (userProfile.id) {
+      dispatch(clearUserData());
+    }
 
-    if (searchUserName) {
+    if (searchUserName.length >= MIN_SEARCH_LENGTH) {
       debounceSearch(searchUserName);
     }
-  }, [searchUserName, debounceSearch]);
+  }, [dispatch, searchUserName, debounceSearch]);
 
   const renderContent = () => {
     if (isLoading) {
@@ -50,7 +61,11 @@ function Body() {
       return <UserContent />;
     }
 
-    return <div>Start searching for GitHub users!</div>;
+    return (
+      <div className="github_icon">
+        <GitHubIcon />
+      </div>
+    );
   };
 
   return (
