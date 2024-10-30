@@ -4,6 +4,7 @@ import { useCallback, useEffect, useState } from 'react';
 import LoadingSpinner from '../../components/Spinner/LoadingSpinner.tsx';
 import { debounce } from '../../utilits/debounce.ts';
 import { getUserProfile } from '../../redux/slices/userSlice.ts';
+import { InputSearch } from '../../components/InputSearch';
 
 const DELAY_SEARCH_INTERVAL = 2000;
 
@@ -31,11 +32,7 @@ function Body() {
   return (
     <BodyStyled theme={theme}>
       <ContentWrapper>
-        <div>
-          <input value={searchUserName} onChange={
-            (e) => setSearchUserName(e.target.value)
-          } />
-        </div>
+        <InputSearch value={searchUserName} onChange={setSearchUserName} />
         {isLoading ? <LoadingSpinner /> : <div>content</div>}
       </ContentWrapper>
     </BodyStyled>
