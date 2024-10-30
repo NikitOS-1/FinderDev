@@ -1,7 +1,7 @@
-import { IUserDataResponse } from '../../commons/types/interfaces.ts';
-import apiService from '../api/apiService.ts';
-import { getApiBaseUrl } from '../../config/config.ts';
-import { BACKEND_API_PATH } from '../../commons/constants/pathConstant.ts';
+import { IUserDataResponse } from '../../commons/types/interfaces';
+import apiService from '../api/apiService';
+import { getApiBaseUrl } from '../../config/config';
+import { BACKEND_API_PATH } from '../../commons/constants/pathConstant';
 
 
 async function getUserProfile(userName: string): Promise<IUserDataResponse> {

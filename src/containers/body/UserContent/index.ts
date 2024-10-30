@@ -1,2 +1,2 @@
-export * from './styled.ts';
-export * from './UserContent.tsx';
+export * from './styled';
+export * from './UserContent';

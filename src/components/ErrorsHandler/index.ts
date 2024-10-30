@@ -1,2 +1,2 @@
-export * from './ErrorsHandler.tsx';
+export * from './ErrorsHandler';
 export * from './styled';

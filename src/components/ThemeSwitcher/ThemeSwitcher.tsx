@@ -2,9 +2,9 @@
 import LightModeIcon from '../../assets/light_mode.svg?react';
 // @ts-ignore
 import DarkModeIcon from '../../assets/dark_mode.svg?react';
-import { ThemeSwitcherStyled } from './styled.ts';
-import { useAppDispatch, useAppSelector } from '../../redux/helpers.ts';
-import { ThemeType, toggleTheme } from '../../redux/slices/themeSlice.ts';
+import { ThemeSwitcherStyled } from './styled';
+import { useAppDispatch, useAppSelector } from '../../redux/helpers';
+import { ThemeType, toggleTheme } from '../../redux/slices/themeSlice';
 
 
 export const ThemeSwitcher = () => {

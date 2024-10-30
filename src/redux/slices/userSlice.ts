@@ -1,8 +1,8 @@
-import { IUserDataResponse, IUserProfile } from '../../commons/types/interfaces.ts';
+import { IUserDataResponse, IUserProfile } from '../../commons/types/interfaces';
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { clearLoading, setLoading } from './loadingSlice.ts';
-import { clearError, setError } from './errorSlice.ts'; // Импортируем действия для ошибок
-import userService from '../../services/user/userService.ts';
+import { clearLoading, setLoading } from './loadingSlice';
+import { clearError, setError } from './errorSlice';
+import userService from '../../services/user/userService';
 
 export const initialState: IUserProfile = {
   id: 0,

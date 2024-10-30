@@ -1,6 +1,6 @@
-import { ContentStyled } from './styled.ts';
-import { useAppSelector } from '../../../redux/helpers.ts';
-import UserAvatar from '../../../components/UserAvatar/UserAvatar.tsx';
+import { ContentStyled } from './styled';
+import { useAppSelector } from '../../../redux/helpers';
+import UserAvatar from '../../../components/UserAvatar/UserAvatar';
 //@ts-ignore
 import LocationIcon from '../../../assets/location_icon.svg?react';
 //@ts-ignore

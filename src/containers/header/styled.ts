@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { ThemeType } from '../../redux/slices/themeSlice.ts';
-import { darkThemeBox, lightThemeBox } from '../../style/commonStyled.ts';
+import { ThemeType } from '../../redux/slices/themeSlice';
+import { darkThemeBox, lightThemeBox } from '../../style/commonStyled';
 
 
 export const HeaderStyled = styled.div<{ theme: 'light' | 'dark'; }>`

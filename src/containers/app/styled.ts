@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
-import { ThemeType } from '../../redux/slices/themeSlice.ts';
-import { darkThemeBackground, lightThemeBackground } from '../../style/commonStyled.ts';
+import { ThemeType } from '../../redux/slices/themeSlice';
+import { darkThemeBackground, lightThemeBackground } from '../../style/commonStyled';
 
 
 export const Wrapper = styled.div<{ theme: 'light' | 'dark' }>`

@@ -1,2 +1,2 @@
 export * from './styled';
-export * from './App.tsx';
+export * from './App';

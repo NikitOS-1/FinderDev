@@ -1,4 +1,4 @@
-import { Styled } from './styled.ts';
+import { Styled } from './styled';
 
 function Footer() {
   return (

@@ -1,8 +1,8 @@
-import Header from '../header/Header.tsx';
-import Body from '../body/Body.tsx';
-import Footer from '../footer/Footer.tsx';
-import { Container, Wrapper } from './styled.ts';
-import { useAppSelector } from '../../redux/helpers.ts';
+import Header from '../header/Header';
+import Body from '../body/Body';
+import Footer from '../footer/Footer';
+import { Container, Wrapper } from './styled';
+import { useAppSelector } from '../../redux/helpers';
 
 function App() {
   const theme = useAppSelector((store) => store.theme.mainTheme);

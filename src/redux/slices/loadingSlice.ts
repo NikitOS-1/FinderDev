@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-interface LoadingState {
+export interface LoadingState {
     isLoading: boolean;
 }
 

@@ -1,15 +1,15 @@
 //@ts-ignore
 import GitHubIcon from '../../assets/github_icon.svg?react';
-import { BodyStyled, ContentWrapper } from './styled.ts';
-import { useAppDispatch, useAppSelector } from '../../redux/helpers.ts';
+import { BodyStyled, ContentWrapper } from './styled';
+import { useAppDispatch, useAppSelector } from '../../redux/helpers';
 import { useCallback, useEffect, useState } from 'react';
-import LoadingSpinner from '../../components/Spinner/LoadingSpinner.tsx';
-import { debounce } from '../../utilits/debounce.ts';
-import { clearUserData, getUserProfile } from '../../redux/slices/userSlice.ts';
+import LoadingSpinner from '../../components/Spinner/LoadingSpinner';
+import { debounce } from '../../utilits/debounce';
+import { clearUserData, getUserProfile } from '../../redux/slices/userSlice';
 import { InputSearch } from '../../components/InputSearch';
 import { ErrorsHandler } from '../../components/ErrorsHandler';
 import { UserContent } from './UserContent';
-import { clearError } from '../../redux/slices/errorSlice.ts';
+import { clearError } from '../../redux/slices/errorSlice';
 
 const DELAY_SEARCH_INTERVAL = 1000;
 const MIN_SEARCH_LENGTH = 1;

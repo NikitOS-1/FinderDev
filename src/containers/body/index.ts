@@ -1,2 +1,2 @@
 export * from './styled';
-export * from './Body.tsx';
+export * from './Body';

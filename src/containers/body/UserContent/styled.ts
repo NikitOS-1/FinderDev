@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { ThemeType } from '../../../redux/slices/themeSlice.ts';
+import { ThemeType } from '../../../redux/slices/themeSlice';
 
 export const ContentStyled = styled.div<{ theme: 'light' | 'dark'; }>`
     display: flex;
