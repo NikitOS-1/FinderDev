@@ -5,14 +5,16 @@ import LoadingSpinner from '../../components/Spinner/LoadingSpinner.tsx';
 import { debounce } from '../../utilits/debounce.ts';
 import { getUserProfile } from '../../redux/slices/userSlice.ts';
 import { InputSearch } from '../../components/InputSearch';
+import { ErrorsHandler } from '../../components/ErrorsHandler';
 
-const DELAY_SEARCH_INTERVAL = 2000;
+const DELAY_SEARCH_INTERVAL = 1000;
 
 function Body() {
   const dispatch = useAppDispatch();
 
   const theme = useAppSelector((store) => store.theme.mainTheme);
   const isLoading = useAppSelector(store => store.loading.isLoading);
+  const isError = useAppSelector(store => store.error.error);
 
   const [searchUserName, setSearchUserName] = useState<string>('');
 
@@ -33,7 +35,13 @@ function Body() {
     <BodyStyled theme={theme}>
       <ContentWrapper>
         <InputSearch value={searchUserName} onChange={setSearchUserName} />
-        {isLoading ? <LoadingSpinner /> : <div>content</div>}
+        {isLoading ? (
+          <LoadingSpinner />
+        ) : isError ? (
+          <ErrorsHandler message="User not found" />
+        ) : (
+          <div>content</div>
+        )}
       </ContentWrapper>
     </BodyStyled>
   );

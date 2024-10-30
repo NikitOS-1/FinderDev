@@ -1,8 +1,8 @@
 import { IUserDataResponse, IUserProfile } from '../../commons/types/interfaces.ts';
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { clearLoading, setLoading } from './loadingSlice.ts';
+import { clearError, setError } from './errorSlice.ts'; // Импортируем действия для ошибок
 import userService from '../../services/user/userService.ts';
-
 
 export const initialState: IUserProfile = {
   id: 0,
@@ -23,22 +23,23 @@ export const initialState: IUserProfile = {
 export const getUserProfile = createAsyncThunk<
   IUserDataResponse,
   string,
-  { rejectValue: string }>(
+  { rejectValue: string }
+>(
   'user/profile',
   async (userName, thunkAPI) => {
     try {
       thunkAPI.dispatch(setLoading());
+      thunkAPI.dispatch(clearError());
       return await userService.getUserProfile(userName);
     } catch (error: any) {
       const { message } = error;
-      console.log(error);
+      thunkAPI.dispatch(setError(message));
       return thunkAPI.rejectWithValue(message);
     } finally {
       thunkAPI.dispatch(clearLoading());
     }
   },
 );
-
 
 const userSlice = createSlice({
   name: 'user',
@@ -60,8 +61,6 @@ const userSlice = createSlice({
         state.twitter = action.payload.twitter_username;
         state.blog = action.payload.blog;
         state.company = action.payload.company;
-      })
-      .addCase(getUserProfile.rejected, () => {
       });
   },
 });
