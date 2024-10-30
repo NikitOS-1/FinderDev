@@ -11,7 +11,7 @@ interface UserAvatarProps {
 
 const UserAvatar = ({
                       name = '',
-                      size = AVATAR_SIZES.SMALL,
+                      size = AVATAR_SIZES.EXTRA_LARGE,
                       round = true,
                       srcImage = null,
                       className,

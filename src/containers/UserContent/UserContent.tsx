@@ -1,5 +1,6 @@
 import { ContentStyled } from './styled.ts';
 import { useAppSelector } from '../../redux/helpers.ts';
+import UserAvatar from '../../components/UserAvatar/UserAvatar.tsx';
 
 export const UserContent = () => {
   const {
@@ -20,7 +21,7 @@ export const UserContent = () => {
   return (
     <ContentStyled>
       <div>
-        <img src={avatar} alt={`Avatar of ${name}`} />
+        <UserAvatar srcImage={avatar} name={name} />
       </div>
       <div>
         <div><strong>Name:</strong> {name}</div>
