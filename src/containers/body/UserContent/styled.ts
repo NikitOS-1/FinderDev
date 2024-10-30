@@ -84,7 +84,7 @@ export const ContentStyled = styled.div<{ theme: 'light' | 'dark'; }>`
                 
                 @media (max-width: 460px) {
                     font-size: 1.2rem;
-                    max-width: 15rem;
+                    max-width: 18rem;
                     white-space: nowrap;
                     overflow: hidden;
                     text-overflow: ellipsis;
@@ -93,6 +93,7 @@ export const ContentStyled = styled.div<{ theme: 'light' | 'dark'; }>`
 
             :last-child {
                 opacity: 0.6;
+                margin-left: 1rem;
             }
 
             @media (max-width: 1100px) {
