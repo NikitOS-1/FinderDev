@@ -36,7 +36,7 @@ function Body() {
       <ContentWrapper>
         <InputSearch value={searchUserName} onChange={setSearchUserName} />
         {isLoading ? <LoadingSpinner /> : <div>content</div>}
-        {isError ? <ErrorsHandler message={'User not found'} /> : null}
+        {!isError ? <ErrorsHandler message={'User not found'} /> : null}
       </ContentWrapper>
     </BodyStyled>
   );

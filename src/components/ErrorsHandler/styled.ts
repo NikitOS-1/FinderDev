@@ -6,4 +6,5 @@ export const ErrorHandlerStyled = styled.div`
     align-items: center;
     justify-content: center;
     font-size: 2rem;
+    height: 60%;
 `;
