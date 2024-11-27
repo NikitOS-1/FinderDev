@@ -15,7 +15,7 @@
 }
 
 @font-face {
-    font-family: "Fira_Code";
+    font-family: "Fira_Code"
     src: url('../assets/fonts/Fira_Code/FiraCode-VariableFont_wght.ttf') format('truetype');
     font-display: swap;
     font-weight: 400;
